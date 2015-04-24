@@ -9,7 +9,7 @@
   (elnode-http-start httpcon "200"
                      '("Content-type" . "text/html")
                      `("Server" . ,(concat "GNU Emacs " emacs-version)))
-  (elnode-http-return httpcon "<html><body><h1>Hello from Emacs!</h1></body></html>"))
+  (elnode-http-return httpcon (concat "<html><body><h1>Hello, " emacs-version " </h1></body></html>")))
 
 (elnode-start 
     'handler 
