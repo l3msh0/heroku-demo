@@ -5,7 +5,7 @@
 (package-refresh-contents)
 (package-install 'elnode)
 
-(defvar vote_num 0)
+(defvar vote_num "0")
 
 (defun handler (httpcon)
   "Demonstration function"
