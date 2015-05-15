@@ -5,8 +5,13 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <h2>アンケート</h2>
+        <h1>アンケート</h1>
         <p>あなたのお気に入りのエディタを教えてください</p>
+        <form method="POST" action="">
+            <input type="text" name="editor_name">
+            <button type="submit">投票</button>
+        </form>
+        <h2>集計結果</h2>
         <ul>
             <li>Emacs {{vote_num}}票</li>
         </ul>
