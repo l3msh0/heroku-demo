@@ -17,7 +17,7 @@
    (let ((body))
      (with-temp-buffer
        (find-file "form.html")
-       (setq body (buffer-substring-no-properties 0 (point-max))))
+       (setq body (buffer-substring-no-properties (point-min) (point-max))))
      (replace-regexp-in-string "{{vote_num}}" vote_num body))))
 
 (elnode-start 
