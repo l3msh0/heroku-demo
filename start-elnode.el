@@ -5,7 +5,7 @@
 (package-refresh-contents)
 (package-install 'elnode)
 
-(defvar vote_num "0")
+(defvar vote-num 0)
 
 (defun handler (httpcon)
   "Demonstration function"
@@ -16,11 +16,11 @@
    httpcon
    (let ((body))
      (when (string= "POST" (elnode-http-method httpcon))
-       (setq vote_num (number-to-string (1+ (string-to-number vote_num)))))
+       (setq vote-num (1+ vote-num)))
      (with-temp-buffer
        (find-file "form.html")
        (setq body (buffer-substring-no-properties (point-min) (point-max))))
-     (replace-regexp-in-string "{{vote_num}}" vote_num body))))
+     (replace-regexp-in-string "{{vote-num}}" (format "%d" vote-num) body))))
 
 (elnode-start 
     'handler 
