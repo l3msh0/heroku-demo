@@ -15,7 +15,7 @@
   (elnode-http-return
    httpcon
    (let ((body))
-     (when (= "POST" (elnode-http-method httpcon))
+     (when (string= "POST" (elnode-http-method httpcon))
        (setq vote_num (number-to-string (1+ (string-to-number vote_num)))))
      (with-temp-buffer
        (find-file "form.html")
